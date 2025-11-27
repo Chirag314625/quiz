@@ -1,0 +1,124 @@
+/* Import fonts: Japanese-themed fonts + UI fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sawarabi+Mincho&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+/* Basic accessible focus styles */
+:focus {
+  outline: 3px solid rgba(14,165,164,0.15);
+  outline-offset: 2px;
+}
+
+body {
+  font-family: 'Noto Sans JP', Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  /* rice paper cream with subtle texture-like gradients */
+  background: linear-gradient(180deg,#fff9f0 0%, #fff6e6 100%);
+  color: #1b1b1b;
+}
+
+/* Japanese theme accents */
+.japan-bg {
+  /* layered background: warm base, soft vignette, warm/red accents and subtle paper texture */
+  background-color: #fff8f2;
+  background-image:
+    radial-gradient(circle at 10% 12%, rgba(230,57,70,0.06), transparent 8%),
+    radial-gradient(circle at 90% 88%, rgba(241,182,196,0.04), transparent 12%),
+    radial-gradient(60% 40% at 50% 30%, rgba(255,235,230,0.6), transparent 40%),
+    repeating-linear-gradient(135deg, rgba(0,0,0,0.02) 0 1px, transparent 1px 10px);
+  background-blend-mode: normal, normal, overlay, multiply;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative sun (hinomaru) */
+.hinomaru {
+  position: absolute;
+  right: 5%;
+  top: 6%;
+  width: 120px;
+  height: 120px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #ff6b6b, #e63946 60%);
+  box-shadow: 0 10px 40px rgba(230,57,70,0.12);
+  opacity: 0.9;
+  transform: rotate(-6deg);
+}
+
+/* Sakura petals accent */
+.sakura {
+  position: absolute;
+  left: 3%;
+  bottom: 4%;
+  width: 240px;
+  opacity: 0.85;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.06));
+  animation: floatPetals 8s ease-in-out infinite;
+}
+
+@keyframes floatPetals {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* subtle utility */
+.container { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+/* Card / device frame styles used by the hero */
+.device-frame {
+  border-radius: 22px;
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,250,252,0.95));
+  box-shadow: 0 18px 40px rgba(3, 15, 27, 0.12), inset 0 6px 18px rgba(255,255,255,0.6);
+}
+
+.inner-panel {
+  border-radius: 16px;
+  background: rgba(245, 254, 255, 0.95);
+  padding: 56px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+/* Display heading style */
+h1.display-heading {
+  font-family: 'Sawarabi Mincho', 'Playfair Display', serif;
+  font-weight: 700;
+  color: #2b2e4a;
+}
+
+.progress-track { height: 6px; background: rgba(43,46,74,0.06); border-radius: 6px; }
+.progress-step { height: 6px; border-radius: 6px; background: #2b2e4a; }
+
+.option-tile { background: linear-gradient(180deg,#fff7f6,#fff4f3); border: 1px solid rgba(230,57,70,0.08); }
+.option-tile:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(43,46,74,0.06); }
+
+.nav-dot { width:36px; height:36px; border-radius:8px; background: rgba(43,46,74,0.06); display:flex; align-items:center; justify-content:center; }
+.nav-dot:hover { background: rgba(43,46,74,0.1); }
+
+/* Button utilities */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#ff6b6b,#ff9aa2);
+  color: white;
+  box-shadow: 0 10px 30px rgba(230,57,70,0.12), 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform .16s ease, box-shadow .16s ease, filter .12s ease;
+}
+.btn-primary:hover { transform: translateY(-3px); filter:brightness(1.02); box-shadow: 0 18px 40px rgba(230,57,70,0.14); }
+.btn-primary:active { transform: translateY(-1px) scale(.995); }
+
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:8px;
+  background: rgba(255,255,255,0.9); border: 1px solid rgba(43,46,74,0.06); box-shadow: 0 6px 16px rgba(11,15,24,0.04);
+}
+.btn-ghost:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(11,15,24,0.06); }
