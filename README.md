@@ -45,16 +45,9 @@ Follow these steps to set up and run the project locally:
 * **Question/Answer Data:** Placeholder data is used for quiz questions and answers. In a real application, this would typically come from an API.
 * **Framer Motion:** Integrated for enhanced animations as discussed in the design phase.
 
-## ✅ Next Steps for Further Development (Beyond Assignment Scope)
-
-* **Mobile Responsiveness:** Extend the current desktop-first design to be fully responsive for tablet and mobile viewports.
-* **API Integration:** Connect the quiz to a backend API for dynamic question fetching, answer submission, and score tracking.
-* **User Authentication:** Implement user login/registration for personalized quiz experiences.
-* **Score & Results Page:** Develop a dedicated page to display quiz results and performance metrics.
-* **Advanced Animations:** Explore more complex animations with Framer Motion for a truly dynamic feel.
-* **Comprehensive Testing:** Add Jest/React Testing Library for unit and integration tests.
 
 ## ⏱️ Time Spent
 
 Approximately **[Your Actual Time]** minutes/hours.
 *(Initial scaffold & sample components: ~20 minutes; Design analysis, core implementation, animation, accessibility integration, and refinement: [Your additional time].)*
+
